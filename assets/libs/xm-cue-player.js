@@ -1,3 +1,5 @@
+console.log('%c Developed By Hazem Safwat', 'background: #222; color: #bada55' );
+console.log('%c https://www.linkedin.com/in/hazem-safwat/' ,'background: #222; color: #bada55');
 $('.slide').hide();
 $('.slide0').fadeIn();
 let intervalId;
@@ -44,23 +46,25 @@ function changeSize() {
 //<editor-fold desc=" - Player Events:">
 
 myPlayer.on('ready', () => {
-    console.log('asd', myPlayer);
+    // console.log('asd', myPlayer);
     // myPlayer.currentTime(2)
     myPlayer.play();
 
     loadingIntervalId = setInterval(() => {
-        console.log('bufferedEnd', bufferedEnd);
-        console.log('buffered%', myPlayer.bufferedPercent());
+        // console.log('bufferedEnd', bufferedEnd);
+        // console.log('buffered%', myPlayer.bufferedPercent());
         if (bufferedEnd !== myPlayer.bufferedEnd()) {
             bufferedEnd = myPlayer.bufferedEnd();
             loadingIsPaused = false
         } else {
             loadingIsPaused = true;
         }
-        console.log('loadingIsPaused%', loadingIsPaused);
+        // console.log('loadingIsPaused%', loadingIsPaused);
         $('.preloader')[0].style.width = myPlayer.bufferedPercent() * 100 + '%';
-        if (myPlayer.bufferedPercent() === 1)
+        if (myPlayer.bufferedPercent() === 1) {
+            $('.preloader').hide()
             clearInterval(loadingIntervalId)
+        }
     }, 300)
 });
 
@@ -76,7 +80,7 @@ myPlayer.on('play', () => {
         });
         currentCueIndex = found;
         if (cues[found]) {
-            console.log('currentTime', myPlayer.currentTime());
+            // console.log('currentTime', myPlayer.currentTime());
             myPlayer.pause();
         }
     })
@@ -88,27 +92,24 @@ myPlayer.on('pause', () => {
 });
 
 myPlayer.on('click', () => {
-    console.log('bufferedEnd()', myPlayer.bufferedEnd())
-    console.log('bufferedEnd() > cues[currentCueIndex]', currentCueIndex, myPlayer.bufferedEnd(), cues[currentCueIndex], myPlayer.bufferedEnd() > cues[currentCueIndex])
+    // console.log('bufferedEnd()', myPlayer.bufferedEnd())
+    // console.log('bufferedEnd() > cues[currentCueIndex]', currentCueIndex, myPlayer.bufferedEnd(), cues[currentCueIndex], myPlayer.bufferedEnd() > cues[currentCueIndex])
     if (myPlayer.paused() && currentCueIndex !== -1 && myPlayer.bufferedEnd() > cues[currentCueIndex]) {
         goto(currentCueIndex);
     }
 });
 
-myPlayer.on('bufferedEnd', () => {
-    console.log('----------------------')
-});
 
 
 //</editor-fold>
 
 //<editor-fold desc=" - goto:">
 function goto(index) {
-    console.log('bufferedEnd()', myPlayer.bufferedEnd())
-    console.log('bufferedEnd() > cues[currentCueIndex]', index, myPlayer.bufferedEnd(), cues[index], myPlayer.bufferedEnd() > cues[index])
+    // console.log('bufferedEnd()', myPlayer.bufferedEnd())
+    // console.log('bufferedEnd() > cues[currentCueIndex]', index, myPlayer.bufferedEnd(), cues[index], myPlayer.bufferedEnd() > cues[index])
 
     if (myPlayer.bufferedEnd() < cues[index + 1]) {
-        console.log('loadingIsPaused', loadingIsPaused)
+        // console.log('loadingIsPaused', loadingIsPaused)
         if (loadingIsPaused === false)
             return
     }
