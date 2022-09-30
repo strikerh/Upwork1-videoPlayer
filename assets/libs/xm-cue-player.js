@@ -48,6 +48,7 @@ function changeSize() {
 myPlayer.on('ready', () => {
     // console.log('asd', myPlayer);
     // myPlayer.currentTime(2)
+    $('.xm-cue-player.container').show('fast');
     myPlayer.play();
 
     loadingIntervalId = setInterval(() => {
