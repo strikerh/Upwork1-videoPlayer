@@ -1,5 +1,6 @@
 console.log('%c Developed By Hazem Safwat', 'background: #222; color: #bada55' );
 console.log('%c https://www.linkedin.com/in/hazem-safwat/' ,'background: #222; color: #bada55');
+
 $('.slide').hide();
 $('.slide0').fadeIn();
 let intervalId;
@@ -48,7 +49,7 @@ function changeSize() {
 myPlayer.on('ready', () => {
     // console.log('asd', myPlayer);
     // myPlayer.currentTime(2)
-    $('.xm-cue-player.container').show('fast');
+    $('.xm-cue-player.container')[0].style.visibility = 'visible'
     myPlayer.play();
 
     loadingIntervalId = setInterval(() => {

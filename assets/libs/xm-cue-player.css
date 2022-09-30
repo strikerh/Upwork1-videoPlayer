@@ -7,6 +7,8 @@
     overflow: hidden;
     max-width: 1000px;
     margin: 0 auto;
+    visibility: hidden;
+
 
 }
 
