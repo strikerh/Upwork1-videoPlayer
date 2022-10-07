@@ -159,7 +159,7 @@
     background-color: #4c4c4cd1;
     color: #fff;
     padding: 8px;
-    border: solid 1px #d7cccc82;
+    /*border: solid 1px #d7cccc82;*/
     transform: translate(-150%, -40%);
 
 
@@ -212,9 +212,9 @@
 
 
 @media (max-aspect-ratio: 470/625) {
-  /*  body {
+    body {
         background-color: yellow;
-    }*/
+    }
 
     .xm-cue-player .slide {
         transform: translate(-24%, 50%) !important;
@@ -323,8 +323,8 @@
     }
 
     .xm-cue-player .slide0 {
-        top: 40%;
-        left: 60%;
+        top: 50%;
+        left: 62%;
     }
 
     .xm-cue-player .slide1 {
@@ -363,8 +363,8 @@
     }
 
     .xm-cue-player .slide7 {
-        top: 31%;
-        left: 46%;
+        top: 52%;
+        left: 43%;
     }
 
     .xm-cue-player .slide8 {
